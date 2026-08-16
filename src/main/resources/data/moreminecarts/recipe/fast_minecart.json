@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CRC",
+    "CMC",
+    "CGC"
+  ],
+  "key": {
+    "C": {
+      "item": "minecraft:copper_ingot"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "M": {
+      "item": "minecraft:minecart"
+    },
+    "G": {
+      "item": "minecraft:gold_ingot"
+    }
+  },
+  "result": {
+    "id": "moreminecarts:fast_minecart",
+    "count": 1
+  }
+}

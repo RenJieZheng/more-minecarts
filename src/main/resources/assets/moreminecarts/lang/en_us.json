@@ -1,7 +1,6 @@
 {
   "itemGroup.moreminecarts": "Example Mod Tab",
-  "block.moreminecarts.example_block": "Example Block",
-  "item.moreminecarts.example_item": "Example Item",
+  "item.moreminecarts.fast_minecart": "Fast Minecart",
 
   "moreminecarts.configuration.title": "More Minecarts Configs",
   "moreminecarts.configuration.section.moreminecarts.common.toml": "More Minecarts Configs",
