@@ -1,0 +1,13 @@
+{
+  "itemGroup.moreminecarts": "Example Mod Tab",
+  "block.moreminecarts.example_block": "Example Block",
+  "item.moreminecarts.example_item": "Example Item",
+
+  "moreminecarts.configuration.title": "More Minecarts Configs",
+  "moreminecarts.configuration.section.moreminecarts.common.toml": "More Minecarts Configs",
+  "moreminecarts.configuration.section.moreminecarts.common.toml.title": "More Minecarts Configs",
+  "moreminecarts.configuration.items": "Item List",
+  "moreminecarts.configuration.logDirtBlock": "Log Dirt Block",
+  "moreminecarts.configuration.magicNumberIntroduction": "Magic Number Text",
+  "moreminecarts.configuration.magicNumber": "Magic Number"
+}
