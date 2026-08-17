@@ -3,7 +3,7 @@
   "pattern": [
     "CRC",
     "CMC",
-    "CGC"
+    "DGD"
   ],
   "key": {
     "C": {
@@ -17,6 +17,9 @@
     },
     "G": {
       "item": "minecraft:gold_ingot"
+    },
+    "D": {
+      "item": "minecraft:diamond"
     }
   },
   "result": {
