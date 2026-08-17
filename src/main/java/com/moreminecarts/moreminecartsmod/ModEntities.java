@@ -20,8 +20,8 @@ public final class ModEntities {
             key -> EntityType.Builder
                 .of(FastMinecart::new, MobCategory.MISC)
                 .sized(0.98F, 0.7F)
-                // .clientTrackingRange(8)
-                // .updateInterval(3)
+                .passengerAttachments(0.1875F)
+                .clientTrackingRange(8)
                 .build("fast_minecart")
         );
 }
