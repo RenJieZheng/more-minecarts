@@ -1,7 +1,8 @@
 # more-minecarts (WIP)
 
 (The following has been auto generated)
-Installation information
+
+# Installation information
 =======
 
 This template repository can be directly cloned to get you started with a new
