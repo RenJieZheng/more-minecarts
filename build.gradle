@@ -27,6 +27,13 @@ sourceSets.main.resources {
     exclude("src/generated/**/.cache") // datagen cache files
 }
 
+sourceSets {
+    serveronly {
+        compileClasspath += sourceSets.main.compileClasspath
+        runtimeClasspath += output + compileClasspath
+    }
+}
+
 repositories {
     // Add here additional repositories if required by some of the dependencies below.
 }
@@ -162,6 +169,31 @@ var generateModMetadata = tasks.register("generateModMetadata", ProcessResources
 sourceSets.main.resources.srcDir generateModMetadata
 // To avoid having to run "generateModMetadata" manually, make it run on every project reload
 neoForge.ideSyncTask generateModMetadata
+
+var generateServerOnlyModMetadata = tasks.register("generateServerOnlyModMetadata", ProcessResources) {
+    var replaceProperties = [
+            minecraft_version      : minecraft_version,
+            minecraft_version_range: minecraft_version_range,
+            neo_version            : neo_version,
+            loader_version_range   : loader_version_range,
+            mod_id                 : mod_id,
+            mod_name               : "${mod_name} Server Only",
+            mod_license            : mod_license,
+            mod_version            : "${mod_version}-serveronly",
+    ]
+    inputs.properties replaceProperties
+    expand replaceProperties
+    from "src/serveronly/templates"
+    into "build/generated/sources/serverOnlyModMetadata"
+}
+sourceSets.serveronly.resources.srcDir generateServerOnlyModMetadata
+
+tasks.register('buildserveronly', Jar) {
+    group = 'build'
+    description = 'Builds the server-only More Minecarts jar.'
+    archiveClassifier = 'serveronly'
+    from sourceSets.serveronly.output
+}
 
 // Example configuration to allow publishing using the maven-publish plugin
 publishing {
