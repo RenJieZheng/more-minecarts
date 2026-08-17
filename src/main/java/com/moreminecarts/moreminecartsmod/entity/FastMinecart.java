@@ -12,6 +12,9 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class FastMinecart extends Minecart{
+    private static final float MAX_RAIL_SPEED = 1.1F;
+    private static final float MAX_RAIL_SPEED_IN_WATER = 0.5F;
+
     public FastMinecart(EntityType<? extends FastMinecart> type, Level level) {
         super(type, level);
     }
@@ -28,7 +31,7 @@ public class FastMinecart extends Minecart{
 
     @Override
     public float getMaxCartSpeedOnRail() {
-        return 1.6F;
+        return MAX_RAIL_SPEED;
     }
 
     @Override
@@ -41,7 +44,7 @@ public class FastMinecart extends Minecart{
             if (!state.is(BlockTags.RAILS)) {
                 return this.getMaxSpeed();
             } else {
-                float railMaxSpeed = this.isInWater() ? 0.8F : 1.6F;
+                float railMaxSpeed = this.isInWater() ? MAX_RAIL_SPEED_IN_WATER : MAX_RAIL_SPEED;
                 return (double)Math.min(railMaxSpeed, this.getCurrentCartSpeedCapOnRail());
             }
         }
