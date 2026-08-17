@@ -1,5 +1,6 @@
-# more-minecarts
+# more-minecarts (WIP)
 
+(The following has been auto generated)
 Installation information
 =======
 
