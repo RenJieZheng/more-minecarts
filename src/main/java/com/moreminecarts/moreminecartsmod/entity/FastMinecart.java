@@ -1,19 +1,29 @@
 package com.moreminecarts.moreminecartsmod.entity;
 
+import com.moreminecarts.moreminecartsmod.ModItems;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.vehicle.Minecart;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.BaseRailBlock;
-import net.minecraft.world.level.block.PoweredRailBlock;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.phys.Vec3;
-import net.minecraft.tags.BlockTags;
 
 public class FastMinecart extends Minecart{
     public FastMinecart(EntityType<? extends FastMinecart> type, Level level) {
         super(type, level);
+    }
+
+    @Override
+    protected Item getDropItem() {
+        return ModItems.FAST_MINECART_ITEM.get();
+    }
+
+    @Override
+    public ItemStack getPickResult() {
+        return new ItemStack(ModItems.FAST_MINECART_ITEM.get());
     }
 
     @Override
